@@ -134,7 +134,7 @@ const Payment = () => {
                   <input type="checkbox" />
                   <span>This order contains a gift.</span>
                 </div>
-              </>
+           
       
           <button className="Proceed-Button" onClick={confirmPayment}>
             Place Order
