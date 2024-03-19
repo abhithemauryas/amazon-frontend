@@ -33,7 +33,7 @@ const Checkout = () => {
 
               <>
                 <p>
-                  Subtotal ({basket.length} item) :<strong> {value}</strong>
+                  Subtotal ({basket.length} item) :<strong> {getBasketTotal(basket)}</strong>
                 </p>
                 <div className="small">
                   <input type="checkbox" />
