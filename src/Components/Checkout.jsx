@@ -4,7 +4,7 @@ import { useStateValue } from "./StateProvider";
 import Navbar from "./Navbar";
 import "../CSS/Card.css";
 import "../CSS/Checkout.css";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 import CheckCard from "./CheckCard";
 import { getBasketTotal } from "./Reducer";
 import { useNavigate } from "react-router-dom";
@@ -29,8 +29,8 @@ const Checkout = () => {
           }
         </div>
         <div className="Subtotal">
-          <CurrencyFormat
-            renderText={(value) => (
+   
+
               <>
                 <p>
                   Subtotal ({basket.length} item) :<strong> {value}</strong>
@@ -40,14 +40,7 @@ const Checkout = () => {
                   <span>This order contains a gift.</span>
                 </div>
               </>
-            )}
-            decimalScale={2}
-            value={getBasketTotal(basket)}
-            displayType="text"
-            thousandSeparator={true}
-            prefix={"₹ "}
-          />
-
+      
           <button
             className="Proceed-Button"
             onClick={() => navigate("/address")}
