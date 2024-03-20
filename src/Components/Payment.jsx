@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import "../CSS/Payment.css";
 import CheckCard from "./CheckCard";
 import { useStateValue } from "./StateProvider";
+// import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./Reducer";
 import { navigate, useNavigate } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
@@ -126,20 +127,19 @@ const Payment = () => {
           </div>
         </div>
         <div className="Subtotal">
-       
-                <p>
-                  Subtotal ({basket.length} item) :<strong> {getBasketTotal(basket)}</strong>
-                </p>
-                <div className="small">
-                  <input type="checkbox" />
-                  <span>This order contains a gift.</span>
-                </div>
-           
-      
-          <button className="Proceed-Button" onClick={confirmPayment}>
+  <div style={{ textAlign: 'left', fontFamily: 'Arial, sans-serif' }}>
+    <p>
+      Subtotal ({basket.length} item) :<strong style={{ color: 'blue' }}> ₹ {getBasketTotal(basket)}</strong>
+    </p>
+    <div style={{ fontSize: '0.8em', marginTop: '5px' }}>
+      <input type="checkbox" style={{ marginRight: '5px' }} />
+      <span>This order contains a gift.</span>
+    </div>
+  </div>
+  <button className="Proceed-Button" onClick={confirmPayment}>
             Place Order
           </button>
-        </div>
+</div>
       </div>
       <Footer/>
     </div>

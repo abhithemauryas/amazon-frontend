@@ -29,25 +29,22 @@ const Checkout = () => {
           }
         </div>
         <div className="Subtotal">
-   
-
-              <>
-                <p>
-                  Subtotal ({basket.length} item) :<strong> {getBasketTotal(basket)}</strong>
-                </p>
-                <div className="small">
-                  <input type="checkbox" />
-                  <span>This order contains a gift.</span>
-                </div>
-              </>
-      
-          <button
-            className="Proceed-Button"
-            onClick={() => navigate("/address")}
-          >
-            Proceed to Checkout
-          </button>
-        </div>
+  <div style={{ textAlign: 'left', fontFamily: 'Arial, sans-serif' }}>
+    <p>
+      Subtotal ({basket.length} item) :<strong style={{ color: 'blue' }}> ₹ {getBasketTotal(basket)}</strong>
+    </p>
+    <div style={{ fontSize: '0.8em', marginTop: '5px' }}>
+      <input type="checkbox" style={{ marginRight: '5px' }} />
+      <span>This order contains a gift.</span>
+    </div>
+  </div>
+  <button
+    className="Proceed-Button"
+    onClick={() => navigate("/address")}
+  >
+    Proceed to Checkout
+  </button>
+</div>
       </div>
       <Footer/>
     </div>
